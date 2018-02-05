@@ -1,0 +1,9 @@
+addEmptyValue:1,
+customValues:"Non includere le addizionali|1
+Importo inserito manualmente|2
+Calcolato da comune di residenza|3",
+name:"vSpecificaImportoAddiz",
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"0A75F9D6-5332-4CF2-B81C-C2059D8C73A8"

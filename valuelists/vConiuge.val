@@ -1,0 +1,12 @@
+addEmptyValue:1,
+customValues:"A carico|2
+Non a carico|3
+",
+dataSource:null,
+name:"vConiuge",
+relationName:null,
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"180DCE3C-B02D-43DA-B9DE-F46DCC52C533",
+valueListType:0

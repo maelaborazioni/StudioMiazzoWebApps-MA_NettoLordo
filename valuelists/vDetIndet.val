@@ -1,0 +1,8 @@
+addEmptyValue:1,
+customValues:"Tempo determinato|1
+Tempo indeterminato|2",
+name:"vDetIndet",
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"4FF3A464-0803-41EF-9AFE-F205810424D3"

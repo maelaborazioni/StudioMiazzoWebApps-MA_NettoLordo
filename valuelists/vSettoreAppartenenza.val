@@ -1,0 +1,13 @@
+addEmptyValue:1,
+customValues:null,
+dataProviderID1:"codice",
+dataProviderID2:"settore",
+dataProviderID3:"idsettore",
+dataSource:"db:/ma_presenze/e2nlsettoriappartenenza",
+name:"vSettoreAppartenenza",
+relationName:null,
+returnDataProviders:4,
+showDataProviders:3,
+typeid:34,
+uuid:"B12DB496-3A21-47C3-A8BE-BA574BEB02E6",
+valueListType:1

@@ -1,0 +1,8 @@
+addEmptyValue:1,
+customValues:"Da Lordo a Netto|1
+Da Netto a Lordo|2",
+name:"vTipologiaCalcolo",
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"316CD89F-3989-40D1-8FA4-0F12F101B7E3"

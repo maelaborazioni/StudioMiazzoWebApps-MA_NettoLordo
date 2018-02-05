@@ -1,0 +1,9 @@
+addEmptyValue:1,
+customValues:"Nessuno |1
+Somma|2
+Sottrai|3",
+name:"vlsSegno",
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"808AD388-FA07-4D4D-B652-25ABA5BDDDCF"

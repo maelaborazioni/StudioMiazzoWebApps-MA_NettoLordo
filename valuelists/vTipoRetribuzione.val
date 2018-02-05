@@ -1,0 +1,8 @@
+addEmptyValue:1,
+customValues:"Mensile|1
+Annuale|2",
+name:"vTipoRetribuzione",
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"D59A1BD6-7AF4-40B8-A992-27B91845E482"

@@ -1,0 +1,13 @@
+addEmptyValue:1,
+customValues:"Operaio|1
+Impiegato|2
+Apprendista esente INAIL|4
+Apprendista soggetto INAIL|5
+Ex apprendista esente INAIL|C
+Ex apprendista soggetto INAIL|D
+Quadro|Q",
+name:"vQualifica",
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"BB88B343-C64D-43A8-B21C-F9B2071E4CCC"

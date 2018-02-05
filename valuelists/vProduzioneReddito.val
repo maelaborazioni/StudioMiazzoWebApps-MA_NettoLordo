@@ -1,0 +1,8 @@
+addEmptyValue:1,
+customValues:"Sì|1
+No|2",
+name:"vProduzioneReddito",
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"3E4C8B39-85BB-4541-B45E-9448665433B4"

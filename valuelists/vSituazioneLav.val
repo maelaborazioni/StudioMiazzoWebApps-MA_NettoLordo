@@ -1,0 +1,9 @@
+addEmptyValue:1,
+customValues:"Normale|1
+Mobilità|2
+Disoccupazione / CIG|3",
+name:"vSituazioneLav",
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"70D9CD63-14F3-4BF8-AFE5-40C96D48643B"
