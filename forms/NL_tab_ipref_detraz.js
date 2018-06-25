@@ -154,9 +154,12 @@ function onDataChangeCriterioCalcAddiz(oldValue, newValue, event) {
 	
 	elements.tabpanel_Addiz.tabIndex = newValue;
 	
-	globals.calcolaImponibile();
-	globals.aggiornaImponibileTabella();
-	globals.verificaDatiInseriti();
+	if(newValue != 3)
+	{
+		globals.calcolaImponibile();
+		globals.aggiornaImponibileTabella();
+		globals.verificaDatiInseriti();
+	}
 	
 	return true;
 }

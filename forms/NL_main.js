@@ -102,9 +102,14 @@ function verificaPassaggioTab(currIndex, nextIndex) {
 		case 2:
 		errMsg = 'Inserire il valore per la retribuzione annuale';
 			break;
+		case 3:
+			errMsg = 'Controllare i valori inseriti per le voci di retribuzione (i campi devono essere tutti specificati)';
+			break;
+		case 4:
+			errMsg = 'Controllare i valori inseriti per i contributi (i campi devono essere tutti specificati)';
+			break;
 		default:
 			break;
-
 		}
 		break;
 	case 3:
@@ -217,7 +222,58 @@ function verificaDatiRetribCtr()
 	if(frm.vRetCtrTipologiaRetribuzione == 2 && !frmAnnuale.vRetCtrRetribuzioneAnnuale)
 	   return 2;
 	
+	if(!verificaVociRetribuzione())
+		return 3;
+	
+	if(!verificaAltriContributi())
+		return 4;
+	
 	return 0;
+}
+
+/**
+ * @properties={typeid:24,uuid:"BA91725C-C84B-49D2-AAC8-5238B31EDB1E"}
+ */
+function verificaVociRetribuzione()
+{
+//	var frmName = forms.NL_tab_retrib_contr.elements.tab_altrevociretribuzione.getTabFormNameAt(1);
+//	var frm = forms[frmName];
+		
+	return true;
+}
+
+/**
+ * @properties={typeid:24,uuid:"550BA43D-34B2-42BC-86D6-C64EC162FFE1"}
+ */
+function verificaAltriContributi()
+{
+	var columns = ['descrizione','imponibileclav','aliquotaclav','importofissolav',
+				   'imponibilecditta','aliquotacditta','importofissoditta','suretributiletfr',
+				   'scaladairpef','solidarietainps10'];
+	var frmName = forms.NL_tab_retrib_contr.elements.tab_contributiaggiuntivi.getTabFormNameAt(1);
+	var frm = forms[frmName];
+	
+	if(frm && frm.foundset)
+	{
+		var fs = frm.foundset;
+		var fsSize = fs.getSize();
+        for(var i = 1; i <= fsSize; i++)
+        {
+        	var rec = fs.getRecord(i);
+        	if(rec)
+        	{
+        		for(var r = 1; r <= columns.length; r++)
+        		{
+        			if(rec[columns[r - 1]] == null)
+        				return false;
+        		}
+        	}
+        	else
+        		return false;
+        }
+	}
+	
+	return true;
 }
 
 /**

@@ -131,35 +131,29 @@ function updateContributiAggiuntivi(arrRec)
 {
 	vArrContributiSelezionati = arrRec;
     
-	// TODO aggiornare visualizzazione dei record aggiuntivi/sottrattivi
-    var oriFrmNamePiu = forms.NL_contributiaggiuntivi_piu_tbl.controller.getName();
+	var oriFrmNamePiu = forms.NL_contributiaggiuntivi_piu_tbl.controller.getName();
     var tempFrmNamePiu = oriFrmNamePiu + '_temp';
     
+    var columns = ['descrizione','imponibileclav','aliquotaclav','importofissolav',
+    			   'imponibilecditta','aliquotacditta','importofissoditta','suretributiletfr',
+				   'scaladairpef','solidarietainps10'];
+    
     var dsPiu = databaseManager.createEmptyDataSet(arrRec.length,0);
-    dsPiu.addColumn('descrizione',1,JSColumn.TEXT);
-    dsPiu.addColumn('imponibileclav',2,JSColumn.NUMBER);
-    dsPiu.addColumn('aliquotaclav',3,JSColumn.NUMBER);
-    dsPiu.addColumn('importofissolav',4,JSColumn.NUMBER);
-    dsPiu.addColumn('imponibilecditta',5,JSColumn.NUMBER);
-    dsPiu.addColumn('aliquotacditta',6,JSColumn.NUMBER);
-    dsPiu.addColumn('importofissoditta',7,JSColumn.NUMBER);
-    dsPiu.addColumn('suretributiletfr',8,JSColumn.INTEGER);
-    dsPiu.addColumn('scaladairpef',9,JSColumn.INTEGER);
-    dsPiu.addColumn('solidarietainps10',10,JSColumn.INTEGER);    
-//    var dsMeno = databaseManager.createEmptyDataSet(arrRec.length,0);
-//    dsMeno.addColumn('nomefondo_meno',1,JSColumn.TEXT);
-//    dsMeno.addColumn('aliquotacditta_meno',2,JSColumn.NUMBER);
-//    dsMeno.addColumn('aliquotaclav_meno',3,JSColumn.NUMBER);
-//    dsMeno.addColumn('suretributiletfr_meno',4,JSColumn.TEXT);
-//    dsMeno.addColumn('importofissoditta_meno',5,JSColumn.NUMBER);
-//    dsMeno.addColumn('importofissolav_meno',6,JSColumn.NUMBER);
+    dsPiu.addColumn(columns[0],1,JSColumn.TEXT);
+    dsPiu.addColumn(columns[1],2,JSColumn.NUMBER);
+    dsPiu.addColumn(columns[2],3,JSColumn.NUMBER);
+    dsPiu.addColumn(columns[3],4,JSColumn.NUMBER);
+    dsPiu.addColumn(columns[4],5,JSColumn.NUMBER);
+    dsPiu.addColumn(columns[5],6,JSColumn.NUMBER);
+    dsPiu.addColumn(columns[6],7,JSColumn.NUMBER);
+    dsPiu.addColumn(columns[7],8,JSColumn.INTEGER);
+    dsPiu.addColumn(columns[8],9,JSColumn.INTEGER);
+    dsPiu.addColumn(columns[9],10,JSColumn.INTEGER);    
     
     for(var i=1; i<=arrRec.length; i++)
     {
     	/** @type {JSRecord<db:/ma_presenze/e2tabcontributiaggiuntivi>}*/
     	var rec = arrRec[i-1];
-//    	TODO se positivo va in più, altrimenti in meno (attenzione all'indice a cui inserire la riga!)
-//    if(rec['flagPiuMeno']){
         var currImponibile,currImponibileDitta;
         
 		if (forms.NL_tab_inquadramento.vInqTipologiaCalcolo == 1) {
@@ -186,19 +180,10 @@ function updateContributiAggiuntivi(arrRec)
     	dsPiu.setValue(i,8,rec.suretributiletfr == 'S' ? 1 : 0);
     	dsPiu.setValue(i,9,rec.scaladaimpirpef == 'S' ? 1 : 0);
     	dsPiu.setValue(i,10,rec.solidarietainps10 == 'S' ? 1 : 0);
-//    }else
-//    {
-//    	dsPiu.setValue(i,1,rec.nomefondo);
-//    	dsPiu.setValue(i,2,rec.aliquotacditta);
-//    	dsPiu.setValue(i,3,rec.aliquotaclav);
-//    	dsPiu.setValue(i,4,rec.suretributiletfr);
-//    	dsPiu.setValue(i,5,rec.importofissoditta);
-//    	dsPiu.setValue(i,6,rec.importofissolav);
-//    }
+
     }
     
     var dSPiu = dsPiu.createDataSource('dSPiu');
-//    var dSMeno = dsMeno.createDataSource('dSMeno');
     
     if(elements.tab_contributiaggiuntivi)
     	elements.tab_contributiaggiuntivi.removeAllTabs();
@@ -208,11 +193,6 @@ function updateContributiAggiuntivi(arrRec)
     	history.removeForm(tempFrmNamePiu);
     	solutionModel.removeForm(tempFrmNamePiu);
     }
-//    if(forms[tempFrmNameMeno] != null)
-//    {
-//    	history.removeForm(tempFrmNameMeno);
-//    	solutionModel.removeForm(tempFrmNameMeno);
-//    }
     
     solutionModel.cloneForm(tempFrmNamePiu,solutionModel.getForm(oriFrmNamePiu));
     solutionModel.getForm(tempFrmNamePiu).dataSource = dSPiu;
@@ -226,23 +206,13 @@ function updateContributiAggiuntivi(arrRec)
 	solutionModel.getForm(tempFrmNamePiu).getField('fld_fisso_ditta_piu').dataProviderID = 'importofissoditta';
 	solutionModel.getForm(tempFrmNamePiu).getField('fld_fisso_dip_piu').dataProviderID = 'importofissolav';
 	solutionModel.getForm(tempFrmNamePiu).getField('fld_solidarieta_inps_10_piu').dataProviderID = 'solidarietainps10';
-	
-//	solutionModel.cloneForm(tempFrmNameMeno,solutionModel.getForm(oriFrmNameMeno));
-//    solutionModel.getForm(tempFrmNameMeno).dataSource = dSMeno;
-//	solutionModel.getForm(tempFrmNameMeno).getField('fld_fondo_meno').dataProviderID = 'nomefondo_meno';
-//	solutionModel.getForm(tempFrmNameMeno).getField('fld_aliquota_ditta_meno').dataProviderID = 'aliquotacditta_meno';
-//	solutionModel.getForm(tempFrmNameMeno).getField('fld_aliquota_dip_meno').dataProviderID = 'aliquotaclav_meno';
-//	solutionModel.getForm(tempFrmNameMeno).getField('fld_su_tfr_meno').dataProviderID = 'suretributiletfr_meno';
-//	solutionModel.getForm(tempFrmNameMeno).getField('fld_fisso_ditta_meno').dataProviderID = 'importofissoditta_meno';
-//	solutionModel.getForm(tempFrmNameMeno).getField('fld_fisso_dip_meno').dataProviderID = 'importofissolav_meno';
 
     elements.tab_contributiaggiuntivi.addTab(tempFrmNamePiu,null,'Contributi',null,null,null,null,null,1);
-//    elements.tab_contributiaggiuntivi.addTab(tempFrmNameMeno,null,'Riduzioni',null,null,null,null,null,2);
 
+    globals.verificaDatiInseriti();
     globals.calcolaSoggBen();
 	globals.calcolaImponibile();
 	globals.aggiornaImponibileTabella();
-	globals.verificaDatiInseriti();
 }
 
 /**
@@ -521,4 +491,18 @@ function resetValues()
 		 }
 	 }
 	 globals.verificaDatiInseriti();
+}
+
+/**
+ * TODO generated, please specify type and doc for the params
+ * @param oldValue
+ * @param newValue
+ * @param event
+ *
+ * @properties={typeid:24,uuid:"0E7E8844-AF1E-4385-949F-35E5AFF81673"}
+ */
+function onDataChangeContrAggField(oldValue,newValue,event)
+{
+	var resp = newValue ? true : false;
+	return resp;
 }

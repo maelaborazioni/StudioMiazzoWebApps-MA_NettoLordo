@@ -24,7 +24,7 @@ onRightClickMethodID:"-1",
 rolloverCursor:12,
 showClick:false,
 size:"20,20",
-styleClass:"btn_calendar",
+styleClass:"btn_lookup",
 typeid:7,
 uuid:"130A2BCC-7E74-4C38-869A-A97CB49D7FFC",
 verticalAlignment:0

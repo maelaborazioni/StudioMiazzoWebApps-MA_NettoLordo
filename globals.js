@@ -273,7 +273,7 @@ function calcolaImponibile()
 			forms.NL_tab_retrib_contr.vImponibileTfr =  response['imponibiletfr'];
 		}
 		else
-			globals.ma_utl_showErrorDialog('Errore nel calcolo dell\'imponibile, riprovare','Netto Lordo');
+			globals.ma_utl_showErrorDialog('Errore nel calcolo dell\'imponibile, controllare i valori inseriti e riprovare','Netto Lordo');
 	}
 	else
 		globals.ma_utl_showErrorDialog('Errore nel contattare il server, riprovare','Netto Lordo');
