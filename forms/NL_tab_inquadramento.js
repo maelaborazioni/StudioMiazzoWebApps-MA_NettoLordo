@@ -278,7 +278,7 @@ function updateSettore(_rec)
 }
 
 /**
- * @param {JSFoundset<db:/ma_nl/e2nlsettoriappartenenza>} fs
+ * @param {JSFoundSet<db:/ma_nl/e2nlsettoriappartenenza>} fs
  *
  * @properties={typeid:24,uuid:"AD08A435-7CEB-4252-B5EC-780BCD7613B0"}
  */
@@ -343,7 +343,7 @@ function updateQualifiche(rec)
 }
 
 /**
- * @param {JSFoundset<db:/ma_nl/e2tabqualificheinps>} fs
+ * @param {JSFoundSet<db:/ma_nl/e2tabqualificheinps>} fs
  *
  * @properties={typeid:24,uuid:"D5478A6D-88D3-4D4B-8AE9-91D519DF3798"}
  */
@@ -377,7 +377,7 @@ function filterQualifiche(fs)
 }
 
 /**
- * @param {JSFoundset<db:/ma_nl/e2tabcontributi>} fs
+ * @param {JSFoundSet<db:/ma_nl/e2tabcontributi>} fs
  *
  * @properties={typeid:24,uuid:"712A73CB-B42F-42B4-B59E-4C6DFAB1FF41"}
  */
