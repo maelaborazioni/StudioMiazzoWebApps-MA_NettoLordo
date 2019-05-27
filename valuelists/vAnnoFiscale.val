@@ -1,11 +1,7 @@
 addEmptyValue:1,
-customValues:"2012\r\
-2013\r\
-2014\r\
-2015\r\
-2016\r\
-2017\r\
-2018",
+customValues:"2017\r\
+2018\r\
+2019",
 name:"vAnnoFiscale",
 typeid:34,
 uuid:"6D3D8A9F-636B-4340-B98E-3AF200616C4A"

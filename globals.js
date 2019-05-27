@@ -137,6 +137,7 @@ function inizializzaParametriNettoLordo()
 	{
 	    case 'http://webapp.studiomiazzo.it:8080':
 		case 'https://webapp.studiomiazzo.it' :
+		case 'https://webapp.peoplegest.it' :	
 			params.nomeserver = 'srv-epiweb';
 		   break;
 		case 'http://srv-servoy-dev:8080' :

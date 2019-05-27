@@ -422,7 +422,7 @@ function onShowForm(_firstShow, _event)
 	// imposta valori iniziali solo la prima volta	che viene visualizzata
 	if(_firstShow)
 	{
-		vInqAnnoFiscale = 2018; //TODO rimettere dopo il caricamento delle nuove aliquote - globals.TODAY.getFullYear();
+		vInqAnnoFiscale = 2019; //TODO rimettere dopo il caricamento delle nuove aliquote - globals.TODAY.getFullYear();
 		elements.btn_lkp_qualifica.enabled = false;
 		elements.btn_lkp_dimaziendale.enabled = false;
 		
