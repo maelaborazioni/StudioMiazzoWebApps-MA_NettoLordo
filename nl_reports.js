@@ -8,18 +8,22 @@ function exportNettoLordo()
 	try
 	{	
 		var params = globals.inizializzaParametriNettoLordo();
-		var url = globals.WS_NL_URL + "/NettoLordo/CalcolaNettoLordo";
+		var url = globals.WS_NL + "/NL/CalcolaNettoLordo";
+		/** @type {{StatusCode : Number,
+				    Message : String,
+				    ReturnValue : Object,
+				    ReportArray : Array<Object>}} */
 		var response = globals.getWebServiceResponse(url,params);
 		
-		if(response != null)
+		if(response && response.StatusCode == globals.HTTPStatusCode.OK)
 		{
-			if(response['returnValue'] == true && response['reportArray'])					
+			if(response.ReportArray && response.ReportArray.length)					
 			{
 				var op_values = {op_progress : 25,
 								 op_periodo : globals.TODAY.getFullYear() * 100 + globals.TODAY.getMonth() + 1,
 								 op_message : 'Recupero dei dati in corso...' };
 				
-				var operation = scopes.log.GetNewOperation(globals.OpType.SNL,op_values);
+				var operation = scopes.operation.getNewOperation(globals.OpType.SNL,op_values);
 				if(!operation)
 				throw new Error('createReport: Cannot create operation');		
 					
@@ -27,7 +31,7 @@ function exportNettoLordo()
 				globals.ma_utl_showFormInDialog(frm.controller.getName(), 'Avanzamento stato operazione');		
 				
 				/** @type{Array} */
-				var array = response['reportArray'];
+				var array = response.ReportArray;
 				var types = [JSColumn.INTEGER, JSColumn.TEXT, JSColumn.TEXT, JSColumn.INTEGER];
 				var names = ['fieldbold','fieldname','fieldvalue','section'];
 				var ds  = databaseManager.createEmptyDataSet(0, names);

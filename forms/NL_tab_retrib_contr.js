@@ -57,28 +57,28 @@ var vImponibileTfr = 0;
 /**
  * @type {Number}
  *
- * @properties={typeid:35,uuid:"9303A22E-4B2D-4F6E-BA64-45C77368F318",variableType:8}
+ * @properties={typeid:35,uuid:"9303A22E-4B2D-4F6E-BA64-45C77368F318",variableType:4}
  */
 var vRetCtrFt = 0;
 
 /**
  * @type {Number}
  *
- * @properties={typeid:35,uuid:"99B653C6-F009-4E9D-B95A-9F75472210F6",variableType:8}
+ * @properties={typeid:35,uuid:"99B653C6-F009-4E9D-B95A-9F75472210F6",variableType:4}
  */
 var vRetCtrPc = 0;
 
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"639A94F9-528C-4D13-8695-8FA628800EDD",variableType:8}
+ * @properties={typeid:35,uuid:"639A94F9-528C-4D13-8695-8FA628800EDD",variableType:4}
  */
 var vRetCtrTipologiaRetribuzione = 1;
 
 /**
  * @type {Number}
  *
- * @properties={typeid:35,uuid:"DA91F27D-212F-4601-934D-7A762EBA1295",variableType:8}
+ * @properties={typeid:35,uuid:"DA91F27D-212F-4601-934D-7A762EBA1295",variableType:4}
  */
 var vRetMaggiorazione = 0;
 
