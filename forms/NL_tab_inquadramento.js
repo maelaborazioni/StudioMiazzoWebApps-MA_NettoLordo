@@ -14,10 +14,10 @@ var vInqScontoINAIL = 0;
 
 /**
  * @type {Number}
- * 
- * @properties={typeid:35,uuid:"3189A0C6-5131-4735-860D-F722BD495AB4",variableType:8}
+ *
+ * @properties={typeid:35,uuid:"8C856547-541F-422E-ACAA-F203194D1E05",variableType:4}
  */
-var vInqAnnoFiscale = globals.TODAY.getFullYear();
+var vInqAnnoFiscale = 2019; //Math.round(globals.TODAY.getFullYear());
 
 /**
  * @type {String}
@@ -36,7 +36,7 @@ var vInqCodQualifica = null;
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"42E11847-F198-43FC-8449-B20F60B734CF",variableType:8}
+ * @properties={typeid:35,uuid:"42E11847-F198-43FC-8449-B20F60B734CF",variableType:4}
  */
 var vInqCodSettoreAppartenenza = null;
 
@@ -71,28 +71,28 @@ var vInqDivisoreCCNL = null;
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"BF397CCC-2AAC-4391-BBC0-B08C02F438C7",variableType:8}
+ * @properties={typeid:35,uuid:"BF397CCC-2AAC-4391-BBC0-B08C02F438C7",variableType:4}
  */
 var vInqIdCCNL = null;
 
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"F533808A-9EB1-417A-977E-DDE73AF06C66",variableType:8}
+ * @properties={typeid:35,uuid:"F533808A-9EB1-417A-977E-DDE73AF06C66",variableType:4}
  */
 var vInqIdQualifica = null;
 
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"F885F8A3-4417-461F-8BEA-2BC0DAAA22CE",variableType:8}
+ * @properties={typeid:35,uuid:"F885F8A3-4417-461F-8BEA-2BC0DAAA22CE",variableType:4}
  */
 var vInqIdSettoreAppartenenza = null;
 
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"32F4BA82-0817-4E18-9F29-D1C95E72B7C0",variableType:8}
+ * @properties={typeid:35,uuid:"32F4BA82-0817-4E18-9F29-D1C95E72B7C0",variableType:4}
  */
 var vInqIdTabContributi = null;
 
@@ -141,7 +141,7 @@ var vInqOreFerie = 0.00;
 /**
  * @type {Number}
  *
- * @properties={typeid:35,uuid:"C5A8A473-4F51-4F30-B87E-951AFE027324",variableType:8}
+ * @properties={typeid:35,uuid:"C5A8A473-4F51-4F30-B87E-951AFE027324",variableType:4}
  */
 var vInqOrePartTime = null;
 
@@ -155,7 +155,7 @@ var vInqOreRol = 0.00;
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"D697EE48-0B0C-4FAE-B774-CDDA2588B359",variableType:8}
+ * @properties={typeid:35,uuid:"D697EE48-0B0C-4FAE-B774-CDDA2588B359",variableType:4}
  */
 var vInqOreSettimanali = null;
 
@@ -176,7 +176,7 @@ var vInqSettoreAppartenenza = null;
 /**
  * @type {Number}
  *  
- * @properties={typeid:35,uuid:"3621B329-2211-4ACF-9A74-45BC6E3B6239",variableType:8}
+ * @properties={typeid:35,uuid:"3621B329-2211-4ACF-9A74-45BC6E3B6239",variableType:4}
  */
 var vInqSituazioneLavorativa = null;
 
@@ -204,7 +204,7 @@ var vInqTipologiaCalcolo = 1;
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"1DB6B522-A8E8-4DBD-B30E-AA14DAC0991D",variableType:8}
+ * @properties={typeid:35,uuid:"1DB6B522-A8E8-4DBD-B30E-AA14DAC0991D",variableType:4}
  */
 var vInqTipologiaRapporto = 1;
 

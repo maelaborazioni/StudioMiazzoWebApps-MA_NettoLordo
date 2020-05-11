@@ -4,6 +4,34 @@
 var SettoriAppartenenza = {COLLABORATORI : 9};
 
 /**
+ * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"3641BD28-0F98-4A62-ACC5-510A0E3794AF",variableType:4}
+ */
+var vIdDitta = 1;
+
+/**
+ * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"226DE73F-F844-4172-A50E-0A885CE2E166",variableType:4}
+ */
+var vIdGruppoInstallazione = -1;
+
+/**
+ * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"31BC3236-66F3-4851-866E-822AA2D6F96F",variableType:4}
+ */
+var vPeriodo = scopes.date.GetDatePart(new Date()).getFullYear() * 100 + scopes.date.GetDatePart(new Date()).getMonth() + 1;
+
+/**
+ * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"28BC6DCB-9B7C-4E57-B348-1FDD0243CA03",variableType:4}
+ */
+var vTipoConnessione = 0;
+
+/**
  * Sospende l'inserimento in corso, è possibile riprenderlo in seguito
  *
  * @param {JSEvent} event the event that triggered the action
@@ -153,13 +181,14 @@ function inizializzaParametriNettoLordo()
 	}
     
 	params.nomecatalogo = globals.Server.MA_PRESENZE;
-    params.tipoconnessione = globals.Connessione.SEDE;
+	params.tipoconnessione = 0;//globals.Connessione.SEDE;
     params.databasecliente = 'Cliente_000000';
-    params.idditta = 1;
-    params.iddipendenti = [];
-    params.periodo = 201307;
+    
+    params.idditta = vIdDitta;
+    params.iddipendenti = JSON.stringify([]);
+    params.periodo = vPeriodo;
     params.gruppolavoratori = '';
-    params.idgruppoinstallazione = -1;
+    params.idgruppoinstallazione = vIdGruppoInstallazione;
     
     //parametri tab inquadramento
     params.nominativo = frmInq.vInqNominativo ? frmInq.vInqNominativo : "" ;
@@ -169,7 +198,7 @@ function inizializzaParametriNettoLordo()
 	params.ferierol = frmInq.vInqTipoCalcoloFerie;
 	params.idsettore = frmInq.vInqIdSettoreAppartenenza == null ? 0 : frmInq.vInqIdSettoreAppartenenza;
 	params.aliquotainail = frmInq.vInqAliquotaINAIL == null ? 0 : frmInq.vInqAliquotaINAIL;
-	params.applicascontoinail = frmInq.vInqScontoINAIL;
+	params.applicascontoinail = frmInq.vInqScontoINAIL ? true : false;
 	params.codqualifica = frmInq.vInqCodQualifica == null ? '' : frmInq.vInqCodQualifica;
 	params.situazionelavorativa = frmInq.vInqSituazioneLavorativa == null ? 1 : frmInq.vInqSituazioneLavorativa;
 	params.tipologiarapporto = frmInq.vInqTipologiaRapporto == null ? 1 : frmInq.vInqTipologiaRapporto;
@@ -177,7 +206,7 @@ function inizializzaParametriNettoLordo()
 	params.divisoreccnl = frmInq.vInqDivisoreCCNL == null ? 173 : frmInq.vInqDivisoreCCNL;
 	params.oresettimanali = frmInq.vInqOreSettimanali == null ? 40 : frmInq.vInqOreSettimanali;
 	params.mensilita = frmInq.vInqMensilita;
-	params.applicasgraviojobact = frmInq.vInqSgravioJobAct;
+	params.applicasgraviojobact = frmInq.vInqSgravioJobAct ? true : false;
 	params.idtabcontributi = frmInq.vInqIdTabContributi == null ? 1 : frmInq.vInqIdTabContributi;
 	params.orariodilavoro = frmInq.vInqOrarioDiLavoro == null ? 1 : frmInq.vInqOrarioDiLavoro;
 	params.oreparttime = frmInq.vInqOrePartTime == null ? 0 : frmInq.vInqOrePartTime;
@@ -185,7 +214,7 @@ function inizializzaParametriNettoLordo()
 	params.orerol = frmInq.vInqOreRol == null ? 0 : frmInq.vInqOreRol;
 	params.segnooreferie = frmInq.vSegnoOreFerie;
 	params.segnoorerol = frmInq.vSegnoOreROL;
-	params.vocicostoorario = frmInq.getVociCostoOrario();
+	params.vocicostoorario = JSON.stringify(frmInq.getVociCostoOrario());
 	params.somministrato = frmInq.vInqLavoroSomministrato == 1 ? true : false;
 	params.costoorario = frmInq.vInqCostoOrario == 1 ? true : false;
 	
@@ -202,8 +231,8 @@ function inizializzaParametriNettoLordo()
     //parametri tab irpef e detrazioni
     params.tipologiacalcoloaddizionali = frmIrpef.vIrpefCriterioCalcoloAdd;
     params.codcomune = frmIrpefDaComune.vIrpefCodComuneResidenza == null ? '' : frmIrpefDaComune.vIrpefCodComuneResidenza;
-    params.tipologiacalcoloaddizionali == 1 ? params.nessuncriteriocalcoloaddizionale = 1
-    		                                  : params.nessuncriteriocalcoloaddizionale = 0;
+    params.tipologiacalcoloaddizionali == 1 ? true : false;
+    params.nessuncriteriocalcoloaddizionale = params.tipologiacalcoloaddizionali;
     
     params.aliquotairpefdigitata = frmIrpef.vChkIrpefAliquotaDigitata && frmIrpef.vIrpefAliquotaDigitata ? frmIrpef.vIrpefAliquotaDigitata : 0;
     params.aliquotacomune = frmIrpefDaComune.vIrpefAliquotaComuneResidenza == null ? 0 : frmIrpefDaComune.vIrpefAliquotaComuneResidenza;
@@ -211,20 +240,19 @@ function inizializzaParametriNettoLordo()
     params.importoaliquotaregionale = frmIrpefFisso.vIrpefImportoAddizRegionale == null ? 0 : frmIrpefFisso.vIrpefImportoAddizRegionale;
     params.produzionereddito = frmIrpef.vIrpefProduzioneReddito == 1 ? true : false;
     params.coniuge = frmIrpef.vIrpefConiuge == null ? 1 : frmIrpef.vIrpefConiuge;
-    params.numerofigli = frmIrpef.vIrpefNumFigliACarico == null ? 0 : frmIrpef.vIrpefNumFigliACarico;
+    params.numerofigli = frmIrpef.vIrpefNumFigliACarico == null ? frmIrpef.vIrpefNumFigliACaricoDefault : frmIrpef.vIrpefNumFigliACarico;
     params.percfigliacarico = frmIrpef.vIrpefPercFigliACarico == null ? 0 : frmIrpef.vIrpefPercFigliACarico;
-    params.nummesifigli = frmIrpef.vIrpefNumeroMesiFigli == null ? 0 : frmIrpef.vIrpefNumeroMesiFigli;
-    params.numerofiglifinoa3anni = frmIrpef.vIrpefNumFigliFino3Anni == null ? 0 : frmIrpef.vIrpefNumFigliFino3Anni;
-    params.numerofiglifinoa3annihandicap = frmIrpef.vIrpefNumFigliFino3AnniHandicap == null ? 0 : frmIrpef.vIrpefNumFigliFino3AnniHandicap;
-    params.numerofiglisup3anni = frmIrpef.vIrpefNumFigliSup3Anni == null ? 0 : frmIrpef.vIrpefNumFigliSup3Anni;
-    params.numerofiglisup3annihandicap = frmIrpef.vIrpefNumFigliSup3AnniHandicap == null ? 0 : frmIrpef.vIrpefNumFigliSup3AnniHandicap;
-    params.numeroaltrifamiliari = frmIrpef.vIrpefNumAltriFamiliari == null ? 0 : frmIrpef.vIrpefNumAltriFamiliari;
+    params.nummesifigli = frmIrpef.vIrpefNumeroMesiFigli == null ? frmIrpef.vIrpefNumeroMesiFigliDefault : frmIrpef.vIrpefNumeroMesiFigli;
+    params.numerofiglifinoa3anni = frmIrpef.vIrpefNumFigliFino3Anni == null ? frmIrpef.vIrpefNumFigliFino3AnniDefault : frmIrpef.vIrpefNumFigliFino3Anni;
+    params.numerofiglifinoa3annihandicap = frmIrpef.vIrpefNumFigliFino3AnniHandicap == null ? frmIrpef.vIrpefNumFigliSup3AnniHandicapDefault : frmIrpef.vIrpefNumFigliFino3AnniHandicap;
+    params.numerofiglisup3anni = frmIrpef.vIrpefNumFigliSup3Anni == null ? frmIrpef.vIrpefNumFigliSup3AnniDefault : frmIrpef.vIrpefNumFigliSup3Anni;
+    params.numerofiglisup3annihandicap = frmIrpef.vIrpefNumFigliSup3AnniHandicap == null ? frmIrpef.vIrpefNumFigliSup3AnniHandicapDefault : frmIrpef.vIrpefNumFigliSup3AnniHandicap;
+    params.numeroaltrifamiliari = frmIrpef.vIrpefNumAltriFamiliari == null ? frmIrpef.vIrpefNumAltriFamiliariDefault : frmIrpef.vIrpefNumAltriFamiliari;
     params.percaltrifamiliariacarico = frmIrpef.vIrpefPercAltriFamiliari == null ? 0 : frmIrpef.vIrpefPercAltriFamiliari;
-    params.nummesialtrifam = frmIrpef.vIrpefNumeroMesiAltriFamiliari == null ? 0 : frmIrpef.vIrpefNumeroMesiAltriFamiliari;
+    params.nummesialtrifam = frmIrpef.vIrpefNumeroMesiAltriFamiliari == null ? frmIrpef.vIrpefNumeroMesiAltriFamiliariDefault : frmIrpef.vIrpefNumeroMesiAltriFamiliari;
     params.applicabonusrenzi = frmIrpef.vChkBonusRenzi == 1 ? true : false;
     //parametri tab straordinari
-    params.maggiorazioni = frmStrao.getMaggiorazioni();
-    
+    params.maggiorazioni = JSON.stringify(frmStrao.getMaggiorazioni());
     return params;
 }
 

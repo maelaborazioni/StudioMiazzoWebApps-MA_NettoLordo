@@ -15,77 +15,133 @@ var vChkIrpefAliquotaDigitata = 0;
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"C0B4329B-B8FC-4B27-8A8C-EFC5B0073AC1",variableType:8}
+ * @properties={typeid:35,uuid:"C0B4329B-B8FC-4B27-8A8C-EFC5B0073AC1",variableType:4}
  */
 var vIrpefConiuge = 3;
 
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"39032272-E0A5-4839-A37E-6C11B38A7C37",variableType:8}
+ * @properties={typeid:35,uuid:"39032272-E0A5-4839-A37E-6C11B38A7C37",variableType:4}
  */
 var vIrpefCriterioCalcoloAdd = 1;
 
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"49FF41A2-2438-4CE3-A917-19642D29CB59",variableType:8}
+ * @properties={typeid:35,uuid:"49FF41A2-2438-4CE3-A917-19642D29CB59",variableType:4}
  */
 var vIrpefNumAltriFamiliari = null;
 
 /**
  * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"56CDD280-1404-4C7B-A2C5-70B044424C05",variableType:4}
+ */
+var vIrpefNumAltriFamiliariDefault = 0;
+
+/**
+ * @type {Number}
  * 
- * @properties={typeid:35,uuid:"A1813A9D-D965-442A-9F03-70A37668B98A",variableType:8}
+ * @properties={typeid:35,uuid:"A1813A9D-D965-442A-9F03-70A37668B98A",variableType:4}
  */
 var vIrpefNumeroMesiAltriFamiliari = null;
 
 /**
  * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"80A1FFAD-5DCC-4C51-8719-783000DACEA1",variableType:4}
+ */
+var vIrpefNumeroMesiAltriFamiliariDefault = 0;
+
+/**
+ * @type {Number}
  * 
- * @properties={typeid:35,uuid:"CA759D60-E2C0-4470-AA9E-F3971A9F5E45",variableType:8}
+ * @properties={typeid:35,uuid:"CA759D60-E2C0-4470-AA9E-F3971A9F5E45",variableType:4}
  */
 var vIrpefNumeroMesiFigli = null;
 
 /**
  * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"56B5663B-E445-4987-86F0-205A89B6CA82",variableType:4}
+ */
+var vIrpefNumeroMesiFigliDefault = 0;
+
+/**
+ * @type {Number}
  * 
- * @properties={typeid:35,uuid:"725CEE9F-1043-4807-8D5A-8B44643FF2E8",variableType:8}
+ * @properties={typeid:35,uuid:"725CEE9F-1043-4807-8D5A-8B44643FF2E8",variableType:4}
  */
 var vIrpefNumFigliACarico = null;
 
 /**
  * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"6A3E6108-B234-4848-90CF-A4A61D5FA073",variableType:4}
+ */
+var vIrpefNumFigliACaricoDefault = 0;
+
+/**
+ * @type {Number}
  * 
- * @properties={typeid:35,uuid:"B2EF5138-E7A9-4574-90B9-4C69810894ED",variableType:8}
+ * @properties={typeid:35,uuid:"B2EF5138-E7A9-4574-90B9-4C69810894ED",variableType:4}
  */
 var vIrpefNumFigliFino3Anni = null;
 
 /**
  * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"D502EAAF-F1CC-4A99-A3DB-B06A61467D4F",variableType:4}
+ */
+var vIrpefNumFigliFino3AnniDefault = 0;
+
+/**
+ * @type {Number}
  * 
- * @properties={typeid:35,uuid:"FEB1B6FF-256B-491E-9B28-40CB9CCC7063",variableType:8}
+ * @properties={typeid:35,uuid:"FEB1B6FF-256B-491E-9B28-40CB9CCC7063",variableType:4}
  */
 var vIrpefNumFigliFino3AnniHandicap = null;
 
 /**
  * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"C6E2017E-197F-44AD-BF46-928F900E2138",variableType:4}
+ */
+var vIrpefNumFigliFino3AnniHandicapDefault = 0;
+
+/**
+ * @type {Number}
  * 
- * @properties={typeid:35,uuid:"8CD37411-7AEA-4E1D-9E4B-1F385DFCAE89",variableType:8}
+ * @properties={typeid:35,uuid:"8CD37411-7AEA-4E1D-9E4B-1F385DFCAE89",variableType:4}
  */
 var vIrpefNumFigliSup3Anni = null;
 
 /**
  * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"DB43A90A-123A-44F8-9F8D-2CD3418E283F",variableType:4}
+ */
+var vIrpefNumFigliSup3AnniDefault = 0;
+
+/**
+ * @type {Number}
  * 
- * @properties={typeid:35,uuid:"E18F66B7-B2D5-4BDB-8D63-EA018F8B61D3",variableType:8}
+ * @properties={typeid:35,uuid:"E18F66B7-B2D5-4BDB-8D63-EA018F8B61D3",variableType:4}
  */
 var vIrpefNumFigliSup3AnniHandicap = null;
 
 /**
  * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"0FA88446-89AA-4C52-8FC7-3DC14B2FBA7A",variableType:4}
+ */
+var vIrpefNumFigliSup3AnniHandicapDefault = 0;
+
+/**
+ * @type {Number}
  * 
- * @properties={typeid:35,uuid:"2DBB690A-147B-4727-AD63-3889C505DF33",variableType:8}
+ * @properties={typeid:35,uuid:"2DBB690A-147B-4727-AD63-3889C505DF33",variableType:4}
  */
 var vIrpefPercAltriFamiliari = null;
 
@@ -99,7 +155,7 @@ var vIrpefPercFigliACarico = null;
 /**
  * @type {Number}
  * 
- * @properties={typeid:35,uuid:"A9919C6B-A56A-4CED-97BF-0A82A8F31839",variableType:8}
+ * @properties={typeid:35,uuid:"A9919C6B-A56A-4CED-97BF-0A82A8F31839",variableType:4}
  */
 var vIrpefProduzioneReddito = 1;
 
