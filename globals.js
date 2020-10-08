@@ -288,7 +288,7 @@ function calcolaImponibile()
 	}
 	//calcolo dell'imponibile
 	var params = globals.inizializzaParametriNettoLordo();
-	var url = globals.WS_NL + "/NL/RecuperaImponibile";
+	var url = globals.WS_NL + "/NL/TaxableIncome";
 	/** @type {{StatusCode : Number,
     Message : String,
     ReturnValue : Object,

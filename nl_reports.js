@@ -8,7 +8,7 @@ function exportNettoLordo()
 	try
 	{	
 		var params = globals.inizializzaParametriNettoLordo();
-		var url = globals.WS_NL + "/NL/CalcolaNettoLordo";
+		var url = globals.WS_NL + "/NL/Calculate";
 		/** @type {{StatusCode : Number,
 				    Message : String,
 				    ReturnValue : Object,
